@@ -3,7 +3,6 @@
  * https://github.com/facebook/react-native
  * @flow
  */
-git
 import React, { Component } from 'react';
 import {
   AppRegistry,
