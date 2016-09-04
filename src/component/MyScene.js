@@ -9,7 +9,7 @@ export default class MyScene extends Component {
         super(props);
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: ds.cloneWithRows(['......']),
+            dataSource: ds.cloneWithRows(['......'])
         };
         this.fetchData();
     }
