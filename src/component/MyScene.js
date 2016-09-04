@@ -9,10 +9,9 @@ export default class MyScene extends Component {
         super(props);
         const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: ds.cloneWithRows([
-                'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
-            ])
+            dataSource: ds.cloneWithRows(['......'])
         };
+        this.fetchData();
     }
 
     fetchData = (ca) => {
@@ -20,8 +19,8 @@ export default class MyScene extends Component {
             .then((response) => response.json())
             .then((responseJson) => {
                 const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
-                const data =[];
-                for(let i of responseJson.data){
+                const data = [];
+                for (let i of responseJson.data) {
                     data.push(i.title);
                 }
                 this.setState({
@@ -37,7 +36,7 @@ export default class MyScene extends Component {
 
     render() {
         return (
-            <View>
+            <View style={{padding:20}}>
                 <Text>my frist dome</Text>
                 <ListView
                     dataSource={this.state.dataSource}
